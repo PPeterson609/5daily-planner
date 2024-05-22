@@ -6,6 +6,8 @@ $('#currentDay').text(dayjs().format('dddd, MMM D'));
 }
 currentDay ();
 
+
+
 //update timeblocks with corresponding color to reflect time of day
 function timeBlockClasses(){
   const currentHour = dayjs().hour();
@@ -22,7 +24,9 @@ function timeBlockClasses(){
 }
 timeBlockClasses();
 
-//save time blocks
+
+
+//save text in time blocks
 function saveBlock (){
   const blockText = document.getElementById('event-${hour}').value;
   localStorage.setItem('event-${hour}', blockText);
