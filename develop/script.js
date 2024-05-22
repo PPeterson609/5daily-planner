@@ -6,7 +6,7 @@ currentDay ();
 //update timeblocks with corresponding color to reflect time of day
 function timeBlockClasses(){
   const currentHour = dayjs().hour();
-  $('time-block').each(function(){
+  $('.time-block').each(function(){
     const blockHour = parseInt($(this).attr('id').split('-')[1]);
     if (blockHour < currentHour){
       $(this).addClass('past');
@@ -20,6 +20,12 @@ function timeBlockClasses(){
 timeBlockClasses();
 
 
+function saveBlock (){
+  const blockText = document.getElementById('event-${hour}').value;
+
+  localStorage.setItem('event-${hour}', blockText);
+
+}
 
 
 
